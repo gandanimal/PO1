@@ -3,6 +3,10 @@ package m19.app.main;
 import m19.core.LibraryManager;
 
 import pt.tecnico.po.ui.Command;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import pt.tecnico.po.ui.DialogException;
+import m19.app.exception.FileOpenFailedException;
 
 // FIXME import other core concepts
 // FIXME import other ui concepts
@@ -28,7 +32,7 @@ public class DoOpen extends Command<LibraryManager> {
     try {
       // FIXME implement command
     } catch (FileNotFoundException fnfe) {
-      throw new FileOpenFailedException(/* fill with the missing file name*/);
+      throw new FileOpenFailedException(fnfe);
     } catch (ClassNotFoundException | IOException e) {
       e.printStackTrace();
     }

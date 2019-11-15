@@ -5,6 +5,7 @@ import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.DialogException;
 // FIXME import other core concepts
 // FIXME import other ui concepts
+import pt.tecnico.po.ui.Input;
 
 /**
  * 4.2.4. Show all users.

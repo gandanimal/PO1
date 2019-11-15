@@ -1,7 +1,6 @@
 package m19.app.exception;
 
 import pt.tecnico.po.ui.DialogException;
-
 /**
  * Class encoding problems processing input files.
  */
