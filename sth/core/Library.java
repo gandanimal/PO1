@@ -1,10 +1,9 @@
-package m19.sth.core;
+package sth.core;
 
-import java.io.Serializable;
+import m19.sth.core.exception.BadEntrySpecificationException;
+
 import java.io.IOException;
-
-import m19.core.exception.MissingFileAssociationException;
-import m19.core.exception.BadEntrySpecificationException;
+import java.io.Serializable;
 
 // FIXME import other system types
 // FIXME import project (core) types if needed

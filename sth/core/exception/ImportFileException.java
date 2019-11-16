@@ -1,4 +1,4 @@
-package m19.core.exception;
+package m19.sth.core.exception;
 
 /**
  * Class for representing a read error.

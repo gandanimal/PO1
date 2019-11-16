@@ -1,10 +1,10 @@
-package core;
+package sth.core;
+
+import m19.sth.core.exception.BadEntrySpecificationException;
+import m19.sth.core.exception.ImportFileException;
+import m19.sth.core.exception.MissingFileAssociationException;
 
 import java.io.*;
-
-import m19.core.exception.MissingFileAssociationException;
-import m19.core.exception.BadEntrySpecificationException;
-import m19.core.exception.ImportFileException;
 
 // FIXME import other system types
 // FIXME import other project (core) types
@@ -91,9 +91,9 @@ public class LibraryManager {
     }
   }
   public String getImportFile() throws ImportFileException {
-    if(file == null) {
+    if(_file == null) {
       throw new ImportFileException();
     }
-    return file;
+    return _file;
   }
 }

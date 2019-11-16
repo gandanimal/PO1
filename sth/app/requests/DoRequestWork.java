@@ -1,6 +1,6 @@
-package m19.app.requests;
+package m19.sth.app.requests;
 
-import m19.core.LibraryManager;
+import m19.sth.core.LibraryManager;
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.DialogException;
 // FIXME import other core concepts
