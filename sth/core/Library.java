@@ -1,4 +1,4 @@
-package m19.core;
+package m19.sth.core;
 
 import java.io.Serializable;
 import java.io.IOException;
@@ -16,7 +16,14 @@ public class Library implements Serializable {
 
   /** Serial number for serialization. */
   private static final long serialVersionUID = 201901101348L;
+  private String _name;
+  private int _nextWorkId;
+  private int _nextUserId;
+  private Parser parser;
 
+  public Library(String nome){
+    _name = nome;
+  }
   // FIXME define attributes
 
   // FIXME define contructor(s)

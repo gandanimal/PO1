@@ -1,7 +1,6 @@
-package m19.core;
+package core;
 
-import java.io.IOException;
-import java.io.FileNotFoundException;
+import java.io.*;
 
 import m19.core.exception.MissingFileAssociationException;
 import m19.core.exception.BadEntrySpecificationException;
@@ -17,11 +16,17 @@ public class LibraryManager {
 
   private Library _library;  // FIXME initialize this attribute
   private String _filename;
+  String _file;
+  private boolean _modified = true;
   // FIXME define other attributes
 
   // FIXME define contructor(s)
-  
+  LibraryManager(Library lib){
+    _library = new Library("Lib");
+  }
   // FIXME define methods
+
+
 
   /**
    * Serialize the persistent state of this application.
@@ -31,8 +36,19 @@ public class LibraryManager {
    * @throws IOException if some error happen during the serialization of the persistent state
 
    */
-  public void save() throws MissingFileAssociationException, IOException {
-    // FIXME implement method
+  public void save(String filename) throws IOException {
+    if(_modified) {
+      _file = filename;
+      save();
+    }
+  }
+
+
+  public void save() throws IOException {
+    ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream( new FileOutputStream(_file)));
+    out.writeObject(_library);
+    out.close();
+    _modified = false;
   }
 
   /**
@@ -64,14 +80,20 @@ public class LibraryManager {
   /**
    * Set the state of this application from a textual representation stored into a file.
    * 
-   * @param datafile the filename of the file with the textual represntation of the state of this application.
+   * @param file the filename of the file with the textual represntation of the state of this application.
    * @throws ImportFileException if it happens some error during the parsing of the textual representation.
    */
-  public void importFile(String datafile) throws ImportFileException {
+  public void importFile(String file) throws ImportFileException {
     try {
-      _library.importFile(datafile);
+      _library.importFile(file);
     } catch (IOException | BadEntrySpecificationException e) {
       throw new ImportFileException(e);
     }
+  }
+  public String getImportFile() throws ImportFileException {
+    if(file == null) {
+      throw new ImportFileException();
+    }
+    return file;
   }
 }
