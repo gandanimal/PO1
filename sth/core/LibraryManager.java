@@ -16,7 +16,7 @@ import m19.core.exception.ImportFileException;
 public class LibraryManager {
 
   private Library _library;  // FIXME initialize this attribute
-
+  private String _filename;
   // FIXME define other attributes
 
   // FIXME define contructor(s)
