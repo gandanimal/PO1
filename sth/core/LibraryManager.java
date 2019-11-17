@@ -8,6 +8,7 @@ import sth.core.exception.MissingFileAssociationException;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 // FIXME import other system types
@@ -137,12 +138,33 @@ public class LibraryManager {
   public void registerUser(String userName, String email) throws UserRegistrationFailedException {
     User user = new User(userName, email, _library.getNextUserId());
     _library.incrementUserId();
+    _users.add(user);
   }
 
   public Library getLibrary(){
     return _library;
   }
- /* public String getUser(int id){
 
-  }*/
+  public String printUser(User u){
+    String printU = "";
+    printU = u.getId() + " - " + u.getName() + " - " + u.getEmail() + " - " + u.getBehavior()+ " - " + u.isActive(); //name + email + behavior + state
+    if(u.isActive()) { //if user is active
+      return printU; //return string as it is
+    }
+    else{ //if not
+      printU = printU + " - EUR " + u.getFine(); //add fine
+      return printU; //return string with fine added
+    }
+  }
+  protected static Comparator<User> UserComparator = new Comparator<User>(){ //compare Users by name
+    public int compare(User u, User u1){
+      return u.getName().compareTo(u1.getName());
+    }
+  };
+  protected static Comparator<User> IdComparator = new Comparator<User>(){ //compare users by ID
+    public int compare(User u, User u1){
+      return u.getId() - u1.getId();
+    }
+  };
+
 }

@@ -11,18 +11,23 @@ import pt.tecnico.po.ui.Command;
  * 4.1.2. Display the current date.
  */
 public class DoDisplayDate extends Command<LibraryManager> {
-
+  String _output;
   /**
    * @param receiver
    */
   public DoDisplayDate(LibraryManager receiver) {
+
     super(Label.DISPLAY_DATE, receiver);
+    _output = "";
   }
 
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
-    Message.currentDate(_receiver.getCurrentDate());
+    _output = Message.currentDate(_receiver.getCurrentDate());
+    _display.add(_output);
+
+    _display.display();
   }
   
 }

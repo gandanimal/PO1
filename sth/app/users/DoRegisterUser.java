@@ -24,7 +24,8 @@ public class DoRegisterUser extends Command<LibraryManager> {
    */
   public DoRegisterUser(LibraryManager receiver) {
     super(Label.REGISTER_USER, receiver);
-    scan = new Scanner(System.in);
+    scan = new Scanner(System.in); //initialize scanner
+    command = "";
     _name = "";
     _email = "";
   }
@@ -32,17 +33,17 @@ public class DoRegisterUser extends Command<LibraryManager> {
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() throws DialogException {
-    Message.requestUserName();
-    command = scan.next();
-    _name = command;
-    Message.requestUserEMail();
-    command = scan.next();
-    _email = command;
+    Message.requestUserName(); //request name
+    command = scan.next(); //read name from in
+    _name = command; //save name
+    Message.requestUserEMail(); //request email
+    command = scan.next(); // read email from in
+    _email = command; //save email
     try{
-      _receiver.registerUser(_name, _email);
-      _id = _receiver.getLibrary().getNextUserId();
-      Message.userRegistrationSuccessful(_id);
-    }catch(UserRegistrationFailedException e){
+      _receiver.registerUser(_name, _email); //register user with given email and name
+      _id = _receiver.getLibrary().getNextUserId(); //get ID that user was registered with (assigned automatically)
+      Message.userRegistrationSuccessful(_id); //return success message
+    }catch(UserRegistrationFailedException e){ //if register fails
       throw new UserRegistrationFailedException(_name, _email);
     }
 

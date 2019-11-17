@@ -25,8 +25,10 @@ public class DoAdvanceDate extends Command<LibraryManager> {
   public DoAdvanceDate(LibraryManager receiver) {
     super(Label.ADVANCE_DATE, receiver);
     scan = new Scanner(System.in); //initialize scanner
+    command = "";
     _days = 0;
     advanced = false;
+
   }
 
   /** @see pt.tecnico.po.ui.Command#execute() */
