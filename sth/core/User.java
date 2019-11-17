@@ -11,9 +11,10 @@ private String _name;
 private String _email;
    private List<String> _notifications = new ArrayList<>();
 
-public User(String name, String email){
+public User(String name, String email, int id){
    _name = name;
    _email = email;
+   _id = id;
 
 }
    public String getName(){

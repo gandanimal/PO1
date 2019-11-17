@@ -1,18 +1,19 @@
 package sth.core;
 
-public class Date{
+public class Date {
 
     private int _currentDate;
 
-    Date(int ctime){
+    Date(int ctime) {
         _currentDate = ctime;
     }
 
-    protected int getCurrentDate(){
-        return _currentDate;        
+    protected int getCurrentDate() {
+        return _currentDate;
     }
 
-    protected void advanceDay(int nDays){
-        _currentDate =+ nDays;     
+    protected void advanceDays(int nDays) {
+            _currentDate = +nDays;
+
     }
 }

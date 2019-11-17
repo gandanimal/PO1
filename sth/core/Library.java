@@ -19,15 +19,23 @@ public class Library implements Serializable {
   private int _nextWorkId;
   private int _nextUserId;
   private Parser _parser;
-  private Date _date;
+
 
   public Library(String nome){
-    _date = new Date(0);
+
     _nextUserId = 0;
     _nextWorkId = 0;
     _parser = new Parser(this);
     _name = nome;
 
+  }
+
+  public int getNextUserId(){
+    return _nextUserId;
+  }
+
+  public void incrementUserId(){
+    _nextUserId++;
   }
   // FIXME define attributes
 

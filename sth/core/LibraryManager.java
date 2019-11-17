@@ -1,6 +1,7 @@
 package sth.core;
 
 import sth.app.exception.NoSuchUserException;
+import sth.app.exception.UserRegistrationFailedException;
 import sth.core.exception.BadEntrySpecificationException;
 import sth.core.exception.ImportFileException;
 import sth.core.exception.MissingFileAssociationException;
@@ -22,32 +23,19 @@ public class LibraryManager {
   private String _file;
   private boolean _modified = true;
   private List<User> _users = new ArrayList<User>();
+  private Date _date;
   // FIXME define other attributes
 
   // FIXME define contructor(s)
   public LibraryManager(){
+
+    _date = new Date(0);
     _library = new Library("Lib");
   }
   // FIXME define methods
 
 
-  public User getUser(int id) throws NoSuchUserException {
-    for (User u : _users) {
-      if (u.getId() == id) {
-        return u;
-      }
-    }
-    throw new NoSuchUserException(id);
-  }
 
-  public boolean checkUser(int id){
-    for (User u : _users) {
-      if (u.getId() == id) {
-        return true;
-      }
-    }
-    return false;
-  }
 
   /**
    * Serialize the persistent state of this application.
@@ -120,4 +108,41 @@ public class LibraryManager {
     }
     return _file;
   }
+
+  public int getCurrentDate(){
+    return _date.getCurrentDate();
+  }
+
+  public void advanceDays(int nDays){
+    _date.advanceDays(nDays);
+  }
+  public User getUser(int id) throws NoSuchUserException {
+    for (User u : _users) {
+      if (u.getId() == id) {
+        return u;
+      }
+    }
+    throw new NoSuchUserException(id);
+  }
+
+  public boolean checkUser(int id){
+    for (User u : _users) {
+      if (u.getId() == id) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public void registerUser(String userName, String email) throws UserRegistrationFailedException {
+    User user = new User(userName, email, _library.getNextUserId());
+    _library.incrementUserId();
+  }
+
+  public Library getLibrary(){
+    return _library;
+  }
+ /* public String getUser(int id){
+
+  }*/
 }
