@@ -150,15 +150,7 @@ public class LibraryManager {
   }
 
   public String printUser(User u){
-    String printU = "";
-    printU = u.getId() + " - " + u.getName() + " - " + u.getEmail() + " - " + u.getBehavior()+ " - " + u.isActive(); //name + email + behavior + state
-    if(u.isActive()) { //if user is active
-      return printU; //return string as it is
-    }
-    else{ //if not
-      printU = printU + " - EUR " + u.getFine(); //add fine
-      return printU; //return string with fine added
-    }
+    return _library.printUser(u);
   }
 
 

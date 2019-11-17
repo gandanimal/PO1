@@ -46,10 +46,27 @@ public class Library implements Serializable {
     _nextUserId++;
     _users.add(u); //add user to users list
   }
-  protected String getAllUsers(){
+  protected String getAllUsers() {
     String output = "";
+    List<User> _sortedList1 = new ArrayList<>(_users);
+    _sortedList1.sort(UserComparator);
+    for (User u : _sortedList1) {
+      output += printUser(u);
 
+    }
     return output;
+  }
+  public String printUser(User u){
+    String printU = "";
+    printU = u.getId() + " - " + u.getName() + " - " + u.getEmail() + " - " + u.getBehavior()+ " - " + u.isActive(); //name + email + behavior + state
+    if(u.isActive()) { //if user is active
+      printU = printU + "\n";
+      return printU; //return string as it is
+    }
+    else{ //if not
+      printU = printU + " - EUR " + u.getFine() + "\n"; //add fine
+      return printU; //return string with fine added
+    }
   }
   /**
    * Read the text input file at the beginning of the program and populates the
@@ -63,16 +80,18 @@ public class Library implements Serializable {
 
   protected static Comparator<User> UserComparator = new Comparator<User>(){ //compare Users by name
     public int compare(User u, User u1){
-      return u.getName().compareTo(u1.getName());
+      if(u.getName().compareTo(u1.getName()) == 0){
+        return u.getId() - u1.getId();
+      }
+      else{
+        return u.getName().compareTo(u1.getName());
+      }
     }
   };
-  protected static Comparator<User> IdComparator = new Comparator<User>(){ //compare users by ID
-    public int compare(User u, User u1){
-      return u.getId() - u1.getId();
-    }
-  };
+
   void importFile(String filename) throws BadEntrySpecificationException, IOException {
-    // FIXME implement method
+    Parser p = new Parser(this);
+    p.parseFile(filename);
   }
 
 }

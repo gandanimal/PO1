@@ -47,6 +47,9 @@ public class DoAdvanceDate extends Command<LibraryManager> {
         _receiver.advanceDays(_days); //advance date
         advanced = true; //change boolean variable to leave cycle
       }
+      else if(_days == 0){
+
+      }
       else{ //if number of days isn't positive
         System.out.println("Invalid input " + "\n" + Message.requestDaysToAdvance());
       }

@@ -40,6 +40,7 @@ public class DoShowUser extends Command<LibraryManager> {
       System.out.println("Invalid input " + e + "\n" ); //if command is not integer catch error
     }
     User u = _receiver.getUser(_id); //get User from User ID
+
     _output = _receiver.printUser(u); //get User Print String
     _display.add(_output); //add it to display
 
