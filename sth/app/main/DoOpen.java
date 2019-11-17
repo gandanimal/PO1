@@ -1,12 +1,13 @@
-package m19.sth.app.main;
-
-import m19.sth.core.LibraryManager;
+package sth.app.main;
 
 import pt.tecnico.po.ui.Command;
+import pt.tecnico.po.ui.DialogException;
+import pt.tecnico.po.ui.Input;
+import sth.app.exception.FileOpenFailedException;
+import sth.core.LibraryManager;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import pt.tecnico.po.ui.DialogException;
-import m19.sth.app.exception.FileOpenFailedException;
 
 // FIXME import other core concepts
 // FIXME import other ui concepts
@@ -17,22 +18,23 @@ import m19.sth.app.exception.FileOpenFailedException;
 public class DoOpen extends Command<LibraryManager> {
 
   // FIXME define input fields if needed
-
+  private Input<String> _fileName;
   /**
    * @param receiver
    */
   public DoOpen(LibraryManager receiver) {
     super(Label.OPEN, receiver);
-    // FIXME initialize input fields if needed
+    _fileName = _form.addStringInput(Message.openFile());
   }
 
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() throws DialogException {
     try {
-      // FIXME implement command
-    } catch (FileNotFoundException fnfe) {
-      throw new FileOpenFailedException(fnfe);
+      _form.parse();
+    _receiver.load(_fileName.value());
+    } catch (FileNotFoundException e) {
+      throw new FileOpenFailedException(_fileName.toString());
     } catch (ClassNotFoundException | IOException e) {
       e.printStackTrace();
     }

@@ -1,4 +1,4 @@
-package m19.sth.app.requests;
+package sth.app.requests;
 
 /** Messages for menu interactions. */
 @SuppressWarnings("nls")

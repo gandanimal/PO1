@@ -1,6 +1,6 @@
-package m19.sth.app.users;
+package sth.app.users;
 
-import m19.sth.core.LibraryManager;
+import sth.core.LibraryManager;
 import pt.tecnico.po.ui.Command;
 
 /** 4.2. Users menu. */

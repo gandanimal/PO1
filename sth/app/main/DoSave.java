@@ -1,8 +1,13 @@
-package m19.sth.app.main;
+package sth.app.main;
 
-import m19.sth.core.LibraryManager;
+import sth.core.LibraryManager;
 
 import pt.tecnico.po.ui.Command;
+import pt.tecnico.po.ui.Input;
+import sth.core.exception.ImportFileException;
+import sth.core.exception.MissingFileAssociationException;
+
+import java.io.IOException;
 
 // FIXME import other core concepts
 // FIXME import other ui concepts
@@ -11,7 +16,7 @@ import pt.tecnico.po.ui.Command;
  * 4.1.1. Save to file under current name (if unnamed, query for name).
  */
 public class DoSave extends Command<LibraryManager> {
-  
+  Input<String> _newFile;
   // FIXME define input fields
 
   /**
@@ -19,12 +24,27 @@ public class DoSave extends Command<LibraryManager> {
    */
   public DoSave(LibraryManager receiver) {
     super(Label.SAVE, receiver);
-    // FIXME initialize input fields
+    _newFile = _form.addStringInput(Message.newSaveAs());
   }
 
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
-    // FIXME implement command
+    String file;
+    try {
+      file = _receiver.getImportFile();
+
+    } catch( ImportFileException e) {
+      _form.parse();
+      file = _newFile.value();
+    }
+
+    try {
+      _receiver.saveAs(file);
+    } catch(IOException e)  {
+      e.printStackTrace();
+    }catch(MissingFileAssociationException e){
+        e.printStackTrace();
+    }
   }
 }

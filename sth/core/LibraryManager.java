@@ -1,10 +1,13 @@
 package sth.core;
 
-import m19.sth.core.exception.BadEntrySpecificationException;
-import m19.sth.core.exception.ImportFileException;
-import m19.sth.core.exception.MissingFileAssociationException;
+import sth.app.exception.NoSuchUserException;
+import sth.core.exception.BadEntrySpecificationException;
+import sth.core.exception.ImportFileException;
+import sth.core.exception.MissingFileAssociationException;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 // FIXME import other system types
 // FIXME import other project (core) types
@@ -16,17 +19,35 @@ public class LibraryManager {
 
   private Library _library;  // FIXME initialize this attribute
   private String _filename;
-  String _file;
+  private String _file;
   private boolean _modified = true;
+  private List<User> _users = new ArrayList<User>();
   // FIXME define other attributes
 
   // FIXME define contructor(s)
-  LibraryManager(Library lib){
+  public LibraryManager(){
     _library = new Library("Lib");
   }
   // FIXME define methods
 
 
+  public User getUser(int id) throws NoSuchUserException {
+    for (User u : _users) {
+      if (u.getId() == id) {
+        return u;
+      }
+    }
+    throw new NoSuchUserException(id);
+  }
+
+  public boolean checkUser(int id){
+    for (User u : _users) {
+      if (u.getId() == id) {
+        return true;
+      }
+    }
+    return false;
+  }
 
   /**
    * Serialize the persistent state of this application.
@@ -36,12 +57,7 @@ public class LibraryManager {
    * @throws IOException if some error happen during the serialization of the persistent state
 
    */
-  public void save(String filename) throws IOException {
-    if(_modified) {
-      _file = filename;
-      save();
-    }
-  }
+
 
 
   public void save() throws IOException {
@@ -61,7 +77,10 @@ public class LibraryManager {
    * @throws IOException if some error happen during the serialization of the persistent state
    */
   public void saveAs(String filename) throws MissingFileAssociationException, IOException {
-    // FIXME implement method
+    if(_modified) {
+      _file = filename;
+      save();
+    }
   }
 
   /**
@@ -74,7 +93,12 @@ public class LibraryManager {
    * @throws ClassNotFoundException 
    */
   public void load(String filename) throws FileNotFoundException, IOException, ClassNotFoundException {
-    // FIXME implement method
+    ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(filename)));
+    Library libAux =(Library)ois.readObject();
+    ois.close();
+    _library = libAux;
+    _file = filename;
+           
   }
 
   /**

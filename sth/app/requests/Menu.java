@@ -1,6 +1,6 @@
-package m19.sth.app.requests;
+package sth.app.requests;
 
-import m19.sth.core.LibraryManager;
+import sth.core.LibraryManager;
 import pt.tecnico.po.ui.Command;
 
 /** 4.4. Requests menu. */

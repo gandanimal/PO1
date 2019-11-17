@@ -1,6 +1,6 @@
-package m19.sth.app.main;
+package sth.app.main;
 
-import m19.sth.core.LibraryManager;
+import sth.core.LibraryManager;
 import pt.tecnico.po.ui.Command;
 
 /** 4.1. Main menu. */

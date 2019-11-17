@@ -1,4 +1,4 @@
-package m19.sth.core.exception;
+package sth.core.exception;
 
 /**
  * Exception for unknown import file entries.

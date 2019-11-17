@@ -1,6 +1,6 @@
 package sth.core;
 
-import m19.sth.core.exception.BadEntrySpecificationException;
+import sth.core.exception.BadEntrySpecificationException;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -18,10 +18,16 @@ public class Library implements Serializable {
   private String _name;
   private int _nextWorkId;
   private int _nextUserId;
-  private Parser parser;
+  private Parser _parser;
+  private Date _date;
 
   public Library(String nome){
+    _date = new Date(0);
+    _nextUserId = 0;
+    _nextWorkId = 0;
+    _parser = new Parser(this);
     _name = nome;
+
   }
   // FIXME define attributes
 
