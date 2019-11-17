@@ -4,6 +4,9 @@ import sth.core.exception.BadEntrySpecificationException;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 // FIXME import other system types
 // FIXME import project (core) types if needed
@@ -19,6 +22,8 @@ public class Library implements Serializable {
   private int _nextWorkId;
   private int _nextUserId;
   private Parser _parser;
+  private List<User> _users = new ArrayList<User>();
+
 
 
   public Library(String nome){
@@ -34,15 +39,18 @@ public class Library implements Serializable {
     return _nextUserId;
   }
 
-  public void incrementUserId(){
-    _nextUserId++;
+  public List<User> getUserList(){
+    return _users;
   }
-  // FIXME define attributes
+  public void newUser(User u){
+    _nextUserId++;
+    _users.add(u); //add user to users list
+  }
+  protected String getAllUsers(){
+    String output = "";
 
-  // FIXME define contructor(s)
-
-  // FIXME define methods
-
+    return output;
+  }
   /**
    * Read the text input file at the beginning of the program and populates the
    * instances of the various possible types (books, DVDs, users).
@@ -52,6 +60,17 @@ public class Library implements Serializable {
    * @throws BadEntrySpecificationException
    * @throws IOException
    */
+
+  protected static Comparator<User> UserComparator = new Comparator<User>(){ //compare Users by name
+    public int compare(User u, User u1){
+      return u.getName().compareTo(u1.getName());
+    }
+  };
+  protected static Comparator<User> IdComparator = new Comparator<User>(){ //compare users by ID
+    public int compare(User u, User u1){
+      return u.getId() - u1.getId();
+    }
+  };
   void importFile(String filename) throws BadEntrySpecificationException, IOException {
     // FIXME implement method
   }

@@ -68,10 +68,14 @@ public class Parser {
     private void parseUser(String[] components, String line) throws BadEntrySpecificationException {
         if (components.length != 3)
             throw new  BadEntrySpecificationException("Wrong number of fields (2) in " + line);
-        User user = new User(components[1], components[2]);
+        try {
+            User user = new User(components[1], components[2], _library.getNextUserId());
+            _library.newUser(user);
+        }catch(Exception e){
+            System.out.println("Failed to Register User\n");
+            e.printStackTrace();
+        }
 
-        // add user to _library
-        // Pode ser necessário ter um try-catch adicional neste método
     }
 
 }

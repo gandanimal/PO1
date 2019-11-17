@@ -8,7 +8,6 @@ import sth.core.exception.MissingFileAssociationException;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 // FIXME import other system types
@@ -118,6 +117,7 @@ public class LibraryManager {
     _date.advanceDays(nDays);
   }
   public User getUser(int id) throws NoSuchUserException {
+    _users = getUserList();
     for (User u : _users) {
       if (u.getId() == id) {
         return u;
@@ -127,6 +127,7 @@ public class LibraryManager {
   }
 
   public boolean checkUser(int id){
+    _users = getUserList();
     for (User u : _users) {
       if (u.getId() == id) {
         return true;
@@ -135,10 +136,13 @@ public class LibraryManager {
     return false;
   }
 
+  public List<User> getUserList(){
+    return _library.getUserList();
+  }
+
   public void registerUser(String userName, String email) throws UserRegistrationFailedException {
-    User user = new User(userName, email, _library.getNextUserId());
-    _library.incrementUserId();
-    _users.add(user);
+    User user = new User(userName, email, _library.getNextUserId()); //register user
+    _library.newUser(user); //increment user ID and add user to the users list
   }
 
   public Library getLibrary(){
@@ -156,15 +160,10 @@ public class LibraryManager {
       return printU; //return string with fine added
     }
   }
-  protected static Comparator<User> UserComparator = new Comparator<User>(){ //compare Users by name
-    public int compare(User u, User u1){
-      return u.getName().compareTo(u1.getName());
-    }
-  };
-  protected static Comparator<User> IdComparator = new Comparator<User>(){ //compare users by ID
-    public int compare(User u, User u1){
-      return u.getId() - u1.getId();
-    }
-  };
+
+
+  public String getAllUsers(){
+    return _library.getAllUsers();
+  }
 
 }
