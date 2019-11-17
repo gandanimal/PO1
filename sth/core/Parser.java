@@ -50,6 +50,7 @@ public class Parser {
         Dvd dvd = new Dvd(components[1], components[2], Integer.parseInt(components[3]),
                 Category.valueOf(components[4]), Integer.parseInt(components[5]),
                 Integer.parseInt(components[6]));
+        _library.newWork(dvd);
 
         // add dvd to _library
     }
@@ -61,6 +62,7 @@ public class Parser {
         Book book = new Book(components[1], components[2], Integer.parseInt(components[3]),
                 Category.valueOf(components[4]), Integer.parseInt(components[5]),
                 Integer.parseInt(components[6]));
+        _library.newWork(book);
 
         // add book to _library
     }
@@ -69,7 +71,7 @@ public class Parser {
         if (components.length != 3)
             throw new  BadEntrySpecificationException("Wrong number of fields (2) in " + line);
         try {
-            User user = new User(components[1], components[2], _library.getNextUserId());
+            User user = new User(components[1], components[2]);
             _library.newUser(user);
         }catch(Exception e){
             System.out.println("Failed to Register User\n");

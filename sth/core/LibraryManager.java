@@ -1,6 +1,7 @@
 package sth.core;
 
 import sth.app.exception.NoSuchUserException;
+import sth.app.exception.NoSuchWorkException;
 import sth.app.exception.UserRegistrationFailedException;
 import sth.core.exception.BadEntrySpecificationException;
 import sth.core.exception.ImportFileException;
@@ -24,12 +25,13 @@ public class LibraryManager {
   private boolean _modified = true;
   private List<User> _users = new ArrayList<User>();
   private Date _date;
+  private List<Work> _works = new ArrayList<>();
   // FIXME define other attributes
 
   // FIXME define contructor(s)
   public LibraryManager(){
 
-    _date = new Date(0);
+    _date = new Date();
     _library = new Library("Lib");
   }
   // FIXME define methods
@@ -121,34 +123,39 @@ public class LibraryManager {
     else{
       return "Numero de dias tem de ser positivo\n";
     }
+    //check user status
   }
   public User getUser(int id) throws NoSuchUserException {
-    _users = getUserList();
-    for (User u : _users) {
-      if (u.getId() == id) {
-        return u;
-      }
-    }
-    throw new NoSuchUserException(id);
+      return _library.getUser(id);
+  }
+
+  public Work getWork(int id) throws NoSuchWorkException {
+    return _library.getWork(id);
+  }
+
+  public String printWork(Work w){
+
+    return _library.printWork(w);
+  }
+  public String getAllWorks(){
+    return _library.getAllWorks();
   }
 
   public boolean checkUser(int id){
-    _users = getUserList();
-    for (User u : _users) {
-      if (u.getId() == id) {
-        return true;
-      }
-    }
-    return false;
+   return _library.checkUser(id);
   }
 
   public List<User> getUserList(){
     return _library.getUserList();
   }
+  public List<Work> getWorkList(){
+    return _library.getWorkList();
+  }
 
-  public void registerUser(String userName, String email) throws UserRegistrationFailedException {
-    User user = new User(userName, email, _library.getNextUserId()); //register user
-    _library.newUser(user); //increment user ID and add user to the users list
+  public int registerUser(String userName, String email) throws UserRegistrationFailedException {
+    User user = new User(userName, email); //create new user
+    _library.newUser(user); //add user to users list
+    return user.getId();
   }
 
   public Library getLibrary(){
