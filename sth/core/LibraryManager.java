@@ -113,8 +113,14 @@ public class LibraryManager {
     return _date.getCurrentDate();
   }
 
-  public void advanceDays(int nDays){
-    _date.advanceDays(nDays);
+  public String advanceDays(int nDays){
+    if(nDays >0){
+      _date.advanceDays(nDays);
+      return null;
+    }
+    else{
+      return "Numero de dias tem de ser positivo\n";
+    }
   }
   public User getUser(int id) throws NoSuchUserException {
     _users = getUserList();

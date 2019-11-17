@@ -1,10 +1,8 @@
 package sth.app.main;
 
-import sth.core.LibraryManager;
-
 import pt.tecnico.po.ui.Command;
-
-import java.util.Scanner;
+import pt.tecnico.po.ui.Input;
+import sth.core.LibraryManager;
 
 // FIXME import iother core concepts
 // FIXME import ui concepts
@@ -14,46 +12,26 @@ import java.util.Scanner;
  */
 public class DoAdvanceDate extends Command<LibraryManager> {
 
-  private int _days;
-  Scanner scan; //scanner to read from stdin
-  private String command; //variable to save String read from stdin
-  private boolean advanced; //variable to check if date has been advanced
+  Input<Integer> _days;
+
 
   /**
    * @param receiver
    */
   public DoAdvanceDate(LibraryManager receiver) {
     super(Label.ADVANCE_DATE, receiver);
-    scan = new Scanner(System.in); //initialize scanner
-    command = "";
-    _days = 0;
-    advanced = false;
+    _days = _form.addIntegerInput(Message.requestDaysToAdvance()); //request number of days to advance
 
   }
 
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
-    Message.requestDaysToAdvance();
+    _form.parse();
+    String advance = _receiver.advanceDays(_days.value()); //advance date
+    _display.add(advance); //add it to displau
+    _display.display(); //display
 
-    do {
-      command = scan.next(); //get next input
-      try {
-        _days = Integer.parseInt(command); //convert to integer
-      } catch (Exception e) {
-        System.out.println("Invalid input " + e + "\n" ); //if command is not integer catch error
-      }
-      if(_days >0){ //if number if days is positive
-        _receiver.advanceDays(_days); //advance date
-        advanced = true; //change boolean variable to leave cycle
-      }
-      else if(_days == 0){
-
-      }
-      else{ //if number of days isn't positive
-        System.out.println("Invalid input " + "\n" + Message.requestDaysToAdvance());
-      }
-    }while(advanced);
     }
 
   }
