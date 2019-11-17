@@ -105,7 +105,7 @@ public class LibraryManager {
     }
   }
   public String getImportFile() throws ImportFileException {
-    if(_file == null) {
+    if(_file == null) { //If there is no file saved
       throw new ImportFileException();
     }
     return _file;
@@ -116,14 +116,14 @@ public class LibraryManager {
   }
 
   public String advanceDays(int nDays){
-    if(nDays >0){
-      _date.advanceDays(nDays);
+    if(nDays >0){ //if number is positive
+      _date.advanceDays(nDays); //advance Date nDays
       return null;
     }
-    else{
+    else{ //else return error
       return "Numero de dias tem de ser positivo\n";
     }
-    //check user status
+    //INCOMPLETE: add check user status
   }
   public User getUser(int id) throws NoSuchUserException {
       return _library.getUser(id);
