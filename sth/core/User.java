@@ -13,12 +13,12 @@ private String _email;
 private  UserBehavior _ub;
 private int _fine;
 private List<String> _notifications = new ArrayList<>();
-   private static final AtomicInteger count = new AtomicInteger(-1);
+   private static final AtomicInteger count = new AtomicInteger(0);
 
 public User(String name, String email){
    _name = name;
    _email = email;
-   _id = count.incrementAndGet();
+   _id = count.getAndIncrement();
    _isActive = true;
    _ub = UserBehavior.NORMAL;
    _fine = 0;

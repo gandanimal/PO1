@@ -17,7 +17,7 @@ public Work(String title, int price, int numberOfCopies){
     _price = price;
     _numberOfCopies = numberOfCopies;
     _numberOfAvailableCopies = numberOfCopies;
-    _id = count.incrementAndGet();
+    _id = count.getAndIncrement();
 
    }
 
