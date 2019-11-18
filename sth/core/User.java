@@ -45,6 +45,14 @@ public User(String name, String email){
    protected boolean isActive(){
       return _isActive;
    }
+   public String isActiveToString(){
+      if(_isActive){
+         return "ACTIVO";
+      }
+      else{
+         return "SUSPENSO";
+      }
+   }
 
    public void suspend(){
       _isActive = false;

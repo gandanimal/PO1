@@ -96,7 +96,7 @@ public class Library implements Serializable {
   public String printUser(User u){
     String printU = "";
     if(checkUser(u.getId())){ //if user exists
-        printU = u.getId() + " - " + u.getName() + " - " + u.getEmail() + " - " + u.getBehavior()+ " - " + u.isActive(); //name + email + behavior + state
+        printU = u.getId() + " - " + u.getName() + " - " + u.getEmail() + " - " + u.getBehavior()+ " - " + u.isActiveToString(); //name + email + behavior + state
         if(u.isActive()) { //if user is active
           printU = printU + "\n";
         }

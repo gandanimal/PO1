@@ -1,0 +1,90 @@
+*** tests/A-06-02-M-ok.out	2019-10-28 12:43:38.000000000 +0000
+--- tests/A-06-02-M-ok.outhyp	2019-11-17 23:48:29.842855442 +0000
+***************
+*** 7,13 ****
+  6 - Menu de gestão de obras
+  7 - Menu de gestão de requisições
+  0 - Sair
+! Escolha uma opção: Introduza número de dias a avançar: Menu Principal
+  1 - Abrir dados
+  2 - Guardar dados
+  3 - Ver data
+--- 7,14 ----
+  6 - Menu de gestão de obras
+  7 - Menu de gestão de requisições
+  0 - Sair
+! Escolha uma opção: Introduza número de dias a avançar: null
+! Menu Principal
+  1 - Abrir dados
+  2 - Guardar dados
+  3 - Ver data
+***************
+*** 26,32 ****
+  6 - Menu de gestão de obras
+  7 - Menu de gestão de requisições
+  0 - Sair
+! Escolha uma opção: Introduza número de dias a avançar: Menu Principal
+  1 - Abrir dados
+  2 - Guardar dados
+  3 - Ver data
+--- 27,34 ----
+  6 - Menu de gestão de obras
+  7 - Menu de gestão de requisições
+  0 - Sair
+! Escolha uma opção: Introduza número de dias a avançar: null
+! Menu Principal
+  1 - Abrir dados
+  2 - Guardar dados
+  3 - Ver data
+***************
+*** 35,41 ****
+  6 - Menu de gestão de obras
+  7 - Menu de gestão de requisições
+  0 - Sair
+! Escolha uma opção: Data actual: 2
+  Menu Principal
+  1 - Abrir dados
+  2 - Guardar dados
+--- 37,43 ----
+  6 - Menu de gestão de obras
+  7 - Menu de gestão de requisições
+  0 - Sair
+! Escolha uma opção: Data actual: 1
+  Menu Principal
+  1 - Abrir dados
+  2 - Guardar dados
+***************
+*** 45,51 ****
+  6 - Menu de gestão de obras
+  7 - Menu de gestão de requisições
+  0 - Sair
+! Escolha uma opção: Introduza número de dias a avançar: Menu Principal
+  1 - Abrir dados
+  2 - Guardar dados
+  3 - Ver data
+--- 47,54 ----
+  6 - Menu de gestão de obras
+  7 - Menu de gestão de requisições
+  0 - Sair
+! Escolha uma opção: Introduza número de dias a avançar: null
+! Menu Principal
+  1 - Abrir dados
+  2 - Guardar dados
+  3 - Ver data
+***************
+*** 54,60 ****
+  6 - Menu de gestão de obras
+  7 - Menu de gestão de requisições
+  0 - Sair
+! Escolha uma opção: Data actual: 7
+  Menu Principal
+  1 - Abrir dados
+  2 - Guardar dados
+--- 57,63 ----
+  6 - Menu de gestão de obras
+  7 - Menu de gestão de requisições
+  0 - Sair
+! Escolha uma opção: Data actual: 5
+  Menu Principal
+  1 - Abrir dados
+  2 - Guardar dados
