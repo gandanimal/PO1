@@ -10,6 +10,7 @@ private int _price;
 private int _numberOfCopies;
 private String _title;
 private int _numberOfAvailableCopies;
+private Category _category;
 
 public Work(String title, int price, int numberOfCopies){
     _title = title;
@@ -38,5 +39,18 @@ public Work(String title, int price, int numberOfCopies){
    public int getId(){
         return _id;
    }
+
+    public String getCategoryToString(){
+        if(_category.equals(Category.FICTION)){
+            return "Ficção";
+        }
+        else if(_category.equals(Category.REFERENCE)){
+            return "Referência";
+        }
+        else if(_category.equals(Category.SCITECH)){
+            return "Técnica e Científica";
+        }
+        return null;
+    }
 
 }   

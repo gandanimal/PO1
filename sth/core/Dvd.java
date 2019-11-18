@@ -25,5 +25,7 @@ public Dvd(String title, String director, int price, Category cat, int igac, int
    public Category getCategory(){
         return _category;
    }
+
+
     
 }   

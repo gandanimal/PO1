@@ -113,10 +113,10 @@ public class Library implements Serializable {
     String printW = "";
     printW = w.getId() + " - " + w.getNumberOfAvailableCopies() + " de " + w.getNumberOfCopies(); //add general details
     if(w instanceof Dvd) { //if work is a DVD add dvd details
-      printW = printW + " - DVD - " + w.getTitle() + " - " + w.getPrice() + " - " + ((Dvd) w).getCategory() + " - " + ((Dvd) w).getDirector() + " - " + ((Dvd) w).getIgac() + "\n";
+      printW = printW + " - DVD - " + w.getTitle() + " - " + w.getPrice() + " - " + ((Dvd) w).getCategoryToString() + " - " + ((Dvd) w).getDirector() + " - " + ((Dvd) w).getIgac() + "\n";
     }
     else if(w instanceof Book){ //if work is a  Book add book details
-      printW = printW + " - Livro - " + w.getTitle() + " - " + w.getPrice() + " - " + ((Book) w).getCategory() + " - " + ((Book) w).getAuthor() + " - " + ((Book) w).getIsbn() + "\n";
+      printW = printW + " - Livro - " + w.getTitle() + " - " + w.getPrice() + " - " + ((Book) w).getCategoryToString() + " - " + ((Book) w).getAuthor() + " - " + ((Book) w).getIsbn() + "\n";
     }
     return printW; //return output
   }

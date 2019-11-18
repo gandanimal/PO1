@@ -24,7 +24,11 @@ public Book(String title, String author, int price, Category cat, int isbn, int 
    }
 
    public Category getCategory(){
-        return _category;
+
+
+    return _category;
    }
+
+
 
 }   

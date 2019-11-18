@@ -1,7 +1,7 @@
 package sth.core;
 
 public enum Category{
-    Referência,
-    Ficção,
+    REFERENCE,
+    FICTION,
     SCITECH;
 }
