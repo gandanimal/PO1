@@ -41,13 +41,13 @@ public Work(String title, int price, int numberOfCopies){
    }
 
     public String getCategoryToString(){
-        if(_category.equals(Category.FICTION)){
+        if(_category == Category.FICTION){
             return "Ficção";
         }
-        else if(_category.equals(Category.REFERENCE)){
+        else if(_category == Category.REFERENCE){
             return "Referência";
         }
-        else if(_category.equals(Category.SCITECH)){
+        else if(_category == Category.SCITECH){
             return "Técnica e Científica";
         }
         return null;
