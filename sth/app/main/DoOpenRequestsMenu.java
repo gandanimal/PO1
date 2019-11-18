@@ -1,6 +1,6 @@
-package sth.app.main;
+package m19.app.main;
 
-import sth.core.LibraryManager;
+import m19.core.LibraryManager;
 import pt.tecnico.po.ui.Command;
 
 /**
@@ -18,7 +18,7 @@ public class DoOpenRequestsMenu extends Command<LibraryManager> {
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
-    sth.app.requests.Menu menu = new sth.app.requests.Menu(_receiver);
+    m19.app.requests.Menu menu = new m19.app.requests.Menu(_receiver);
     menu.open();
   }
 }

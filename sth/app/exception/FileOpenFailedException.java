@@ -1,4 +1,4 @@
-package sth.app.exception;
+package m19.app.exception;
 
 import pt.tecnico.po.ui.DialogException;
 /**

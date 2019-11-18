@@ -1,4 +1,4 @@
-package sth.app.exception;
+package m19.app.exception;
 
 /** Messages for menu interactions. */
 @SuppressWarnings("nls")

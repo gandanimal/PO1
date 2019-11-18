@@ -1,4 +1,4 @@
-package sth.core.exception;
+package m19.core.exception;
 
 /** 
  * Represents the error case when an application is not associated yet with a file.

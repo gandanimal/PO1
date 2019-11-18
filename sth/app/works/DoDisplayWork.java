@@ -1,10 +1,10 @@
-package sth.app.works;
+package m19.app.works;
 
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.DialogException;
 import pt.tecnico.po.ui.Input;
-import sth.core.LibraryManager;
-import sth.core.Work;
+import m19.core.LibraryManager;
+import m19.core.Work;
 // FIXME import other core concepts
 // FIXME import ui concepts
 

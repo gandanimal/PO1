@@ -1,8 +1,8 @@
-package sth.app.main;
+package m19.app.main;
 
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.Input;
-import sth.core.LibraryManager;
+import m19.core.LibraryManager;
 
 // FIXME import iother core concepts
 // FIXME import ui concepts

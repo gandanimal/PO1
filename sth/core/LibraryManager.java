@@ -1,11 +1,11 @@
-package sth.core;
+package m19.core;
 
-import sth.app.exception.NoSuchUserException;
-import sth.app.exception.NoSuchWorkException;
-import sth.app.exception.UserRegistrationFailedException;
-import sth.core.exception.BadEntrySpecificationException;
-import sth.core.exception.ImportFileException;
-import sth.core.exception.MissingFileAssociationException;
+import m19.app.exception.NoSuchUserException;
+import m19.app.exception.NoSuchWorkException;
+import m19.app.exception.UserRegistrationFailedException;
+import m19.core.exception.BadEntrySpecificationException;
+import m19.core.exception.ImportFileException;
+import m19.core.exception.MissingFileAssociationException;
 
 import java.io.*;
 import java.util.ArrayList;

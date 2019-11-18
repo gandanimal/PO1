@@ -1,7 +1,7 @@
-package sth.app.works;
+package m19.app.works;
 
 import pt.tecnico.po.ui.Command;
-import sth.core.LibraryManager;
+import m19.core.LibraryManager;
 // FIXME import other core concepts
 // FIXME import ui concepts
 

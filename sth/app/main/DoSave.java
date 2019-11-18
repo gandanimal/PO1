@@ -1,11 +1,11 @@
-package sth.app.main;
+package m19.app.main;
 
-import sth.core.LibraryManager;
+import m19.core.LibraryManager;
 
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.Input;
-import sth.core.exception.ImportFileException;
-import sth.core.exception.MissingFileAssociationException;
+import m19.core.exception.ImportFileException;
+import m19.core.exception.MissingFileAssociationException;
 
 import java.io.IOException;
 

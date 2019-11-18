@@ -1,9 +1,9 @@
-package sth.app;
+package m19.app;
 
 import static pt.tecnico.po.ui.Dialog.IO;
 
-import sth.core.LibraryManager;
-import sth.core.exception.ImportFileException;
+import m19.core.LibraryManager;
+import m19.core.exception.ImportFileException;
 
 /**
  * Main driver for the library management application.
@@ -26,7 +26,7 @@ public class App {
     }
 
     try {
-      sth.app.main.Menu menu = new sth.app.main.Menu(mgr);
+      m19.app.main.Menu menu = new m19.app.main.Menu(mgr);
       menu.open();
     } finally {
       IO.close();

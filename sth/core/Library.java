@@ -1,8 +1,8 @@
-package sth.core;
+package m19.core;
 
-import sth.app.exception.NoSuchUserException;
-import sth.app.exception.NoSuchWorkException;
-import sth.core.exception.BadEntrySpecificationException;
+import m19.app.exception.NoSuchUserException;
+import m19.app.exception.NoSuchWorkException;
+import m19.core.exception.BadEntrySpecificationException;
 
 import java.io.IOException;
 import java.io.Serializable;

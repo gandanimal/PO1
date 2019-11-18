@@ -1,4 +1,4 @@
-package sth.core.exception;
+package m19.core.exception;
 
 /**
  * Class encoding file opening failure.

@@ -1,4 +1,4 @@
-package sth.core;
+package m19.core;
 
 public class Book extends Work{
 

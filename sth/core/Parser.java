@@ -1,6 +1,6 @@
-package sth.core;
+package m19.core;
 
-import sth.core.exception.BadEntrySpecificationException;
+import m19.core.exception.BadEntrySpecificationException;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

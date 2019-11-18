@@ -1,6 +1,6 @@
-package sth.app.works;
+package m19.app.works;
 
-import sth.core.LibraryManager;
+import m19.core.LibraryManager;
 import pt.tecnico.po.ui.Command;
 
 /** 4.3. Works menu. */
