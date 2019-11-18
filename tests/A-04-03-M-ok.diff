@@ -1,5 +1,5 @@
 *** tests/A-04-03-M-ok.out	2019-10-28 12:43:38.000000000 +0000
---- tests/A-04-03-M-ok.outhyp	2019-11-18 00:46:50.000000000 +0000
+--- tests/A-04-03-M-ok.outhyp	2019-11-18 01:08:27.253058171 +0000
 ***************
 *** 12,36 ****
   2 - Mostrar todas as obras
@@ -27,5 +27,5 @@
 - 7 - Menu de gestão de requisições
 - 0 - Sair
   Escolha uma opção: 
-\ No newline at end of file
+\ Nenhuma linha nova no fim do ficheiro
 --- 12,15 ----

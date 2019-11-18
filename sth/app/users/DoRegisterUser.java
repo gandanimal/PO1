@@ -22,8 +22,7 @@ public class DoRegisterUser extends Command<LibraryManager> {
    */
   public DoRegisterUser(LibraryManager receiver) {
     super(Label.REGISTER_USER, receiver);
-    _name = _form.addStringInput(Message.requestUserName());
-    _email = _form.addStringInput(Message.requestUserEMail());
+
   }
 
   /** @see pt.tecnico.po.ui.Command#execute() */
@@ -31,6 +30,8 @@ public class DoRegisterUser extends Command<LibraryManager> {
   public final void execute() throws DialogException {
 
     try{
+      _name = _form.addStringInput(Message.requestUserName());
+      _email = _form.addStringInput(Message.requestUserEMail());
       _id = _receiver.registerUser(_name.toString(), _email.toString()); //register user with given email and name, and get id value
       Message.userRegistrationSuccessful(_id); //return success message with given id
     }catch(UserRegistrationFailedException e){ //if register fails
