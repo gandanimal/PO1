@@ -13,7 +13,7 @@ private String _email;
 private  UserBehavior _ub;
 private int _fine;
 private List<String> _notifications = new ArrayList<>();
-   private static final AtomicInteger count = new AtomicInteger(0);
+   private static final AtomicInteger count = new AtomicInteger(-1);
 
 public User(String name, String email){
    _name = name;
