@@ -5,9 +5,9 @@ let correct=0;
 
 for x in tests/*.in; do
     if [ -e ${x%.in}.import ]; then
-        java -cp :po-uilib.jar:. -Dimport=${x%.in}.import -Din=$x -Dout=${x%.in}.outhyp m19.app.App;
+        java -cp :po-uilib.jar:. -Dimport=${x%.in}.import -Din=$x -Dout=${x%.in}.outhyp app.App;
     else
-        java -cp po-uilib.jar:. -Din=$x -Dout=${x%.in}.outhyp m19.app.App;
+        java -cp po-uilib.jar:. -Din=$x -Dout=${x%.in}.outhyp app.App;
     fi
 
     diff -cB -w ${x%.in}.out ${x%.in}.outhyp > ${x%.in}.diff ;
