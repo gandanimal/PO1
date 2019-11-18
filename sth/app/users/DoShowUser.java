@@ -20,14 +20,14 @@ public class DoShowUser extends Command<LibraryManager> {
   public DoShowUser(LibraryManager receiver) {
     super(Label.SHOW_USER, receiver);
     _output = "";
-    _id = _form.addIntegerInput(Message.requestUserId());
+
   }
 
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() throws DialogException {
 
-
+    _id = _form.addIntegerInput(Message.requestUserId());
     User u = _receiver.getUser(_id.value()); //get User from User ID
     _output = _receiver.printUser(u); //get User Print String
     _display.add(_output); //add it to display
