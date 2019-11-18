@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public abstract class Work{
 
-private static final AtomicInteger count = new AtomicInteger(-1);
+private static final AtomicInteger count = new AtomicInteger(0);
 private int _id;
 private int _price;
 private int _numberOfCopies;
