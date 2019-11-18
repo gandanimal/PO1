@@ -1,5 +1,5 @@
 *** tests/A-08-01-M-ok.out	2019-10-28 12:43:38.000000000 +0000
---- tests/A-08-01-M-ok.outhyp	2019-11-17 23:48:30.658873414 +0000
+--- tests/A-08-01-M-ok.outhyp	2019-11-18 00:18:21.466955335 +0000
 ***************
 *** 14,28 ****
   4 - Mostrar notificações de utente
@@ -30,7 +30,7 @@
   0 - Sair
 ! Escolha uma opção: Número inválido!
 ! Escolha uma opção: Número inválido!
-! Escolha uma opção: 1 - null - null - NORMAL - true
+! Escolha uma opção: 0 - null - null - NORMAL - ACTIVO
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente
@@ -65,8 +65,8 @@
   0 - Sair
 ! Escolha uma opção: Número inválido!
 ! Escolha uma opção: Número inválido!
-! Escolha uma opção: 1 - null - null - NORMAL - true
-! 2 - null - null - NORMAL - true
+! Escolha uma opção: 0 - null - null - NORMAL - ACTIVO
+! 1 - null - null - NORMAL - ACTIVO
   Menu de Gestão de Utentes
   1 - Registar utente
   2 - Mostrar utente

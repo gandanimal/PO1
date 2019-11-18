@@ -23,10 +23,10 @@ Escolha uma opção: Menu de Gestão de Utentes
 0 - Sair
 Escolha uma opção: Número inválido!
 Escolha uma opção: Número inválido!
-Escolha uma opção: 1 - Darth Vader - darth@dark.force.com - NORMAL - true
-2 - Luke Skywalker - last.jedi@universe.com - NORMAL - true
-3 - Obi-Wan Kenobi - obiwan@jedi.org - NORMAL - true
-4 - null - null - NORMAL - true
+Escolha uma opção: 0 - Darth Vader - darth@dark.force.com - NORMAL - ACTIVO
+1 - Luke Skywalker - last.jedi@universe.com - NORMAL - ACTIVO
+2 - Obi-Wan Kenobi - obiwan@jedi.org - NORMAL - ACTIVO
+3 - null - null - NORMAL - ACTIVO
 Menu de Gestão de Utentes
 1 - Registar utente
 2 - Mostrar utente
